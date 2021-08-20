@@ -1,0 +1,14 @@
+name: 'license-checker-action'
+description: 'Checks licenses using license-checker and reports undesired licenses'
+inputs:
+  licenseWhitelist:
+    description: 'List of licenses that are accepted for the project, e.g., Apache-2.0, BSD-2-Clause'
+    required: false
+    default: ''
+  packageWhitelist:
+    description: 'List of packages that are accepted and should be ignored'
+    required: false
+    default: ''
+runs:
+  using: 'node12'
+  main: 'index.js'
