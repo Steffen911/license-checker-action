@@ -18,7 +18,7 @@ try {
             })
             .map((packageName) => packages[packageName]);
         if (unexpectedPackages.length > 0) {
-            core.setFailed(`packages with non-whitelisted versions: ${JSON.stringify(unexpectedPackages)}`);
+            core.setFailed(`packages with non-whitelisted versions: ${JSON.stringify(unexpectedPackages, null, 2)}`);
         }
     });
 } catch (error) {
