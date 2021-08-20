@@ -13,9 +13,7 @@ try {
             throw err;
         }
         const unexpectedPackages = Object.keys(packages)
-            .filter((packageName) => {
-                return !packageWhitelist.includes(packageName.split('@')[0])
-            })
+            .filter((packageName) => !packageWhitelist.includes(packageName))
             .map((name) => ({ name, ...packages[name] }));
         if (unexpectedPackages.length > 0) {
             core.setFailed(`packages with non-whitelisted versions: ${JSON.stringify(unexpectedPackages, null, 2)}`);
