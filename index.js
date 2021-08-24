@@ -7,7 +7,7 @@ try {
 
     checker.init({
         start: '.',
-        exclude: licenseWhitelist,
+        excludeLicenses: licenseWhitelist,
     }, (err, packages) => {
         if (err) {
             throw err;
