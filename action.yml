@@ -9,6 +9,10 @@ inputs:
     description: 'List of packages that are accepted and should be ignored'
     required: false
     default: ''
+  packagePatternWhitelist:
+    description: 'List of package patterns that are accepted and should be ignored'
+    required: false
+    default: ''
 runs:
   using: 'node12'
   main: 'index.js'

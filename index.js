@@ -4,6 +4,7 @@ const checker = require('license-checker-rseidelsohn');
 try {
     const licenseWhitelist = core.getInput('licenseWhitelist');
     const packageWhitelist = core.getInput('packageWhitelist').split(',');
+    const packagePatternWhitelist = core.getInput('packagePatternWhitelist').split(',');
 
     checker.init({
         start: '.',
@@ -14,6 +15,7 @@ try {
         }
         const unexpectedPackages = Object.keys(packages)
             .filter((packageName) => !packageWhitelist.includes(packageName))
+            .filter((packageName) => !packagePatternWhitelist.some((pattern) => packageName.includes(pattern)))
             .map((name) => ({ name, ...packages[name] }));
         if (unexpectedPackages.length > 0) {
             core.setFailed(`packages with non-whitelisted versions: ${JSON.stringify(unexpectedPackages, null, 2)}`);
