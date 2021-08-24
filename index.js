@@ -1,5 +1,5 @@
 const core = require('@actions/core');
-const checker = require('license-checker');
+const checker = require('license-checker-rseidelsohn');
 
 try {
     const licenseWhitelist = core.getInput('licenseWhitelist');
