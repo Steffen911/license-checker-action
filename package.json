@@ -16,6 +16,6 @@
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.9.1",
-    "license-checker-rseidelsohn": "^1.2.2"
+    "license-checker-rseidelsohn": "^4.2.6"
   }
 }
